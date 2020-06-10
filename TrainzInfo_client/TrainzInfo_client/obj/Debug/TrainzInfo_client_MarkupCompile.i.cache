@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\
 TrainzInfo_client
 none
 false
 DEBUG;TRACE
-D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\App.xaml
-11151548125
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\App.xaml
+3-34709413
 
-8-1058196773
-151366856318
-MainWindow.xaml;
+12970178444
+1241796117582
+MainWindow.xaml;WIndows\NewsWindow.xaml;WIndows\UpdateWindow.xaml;
 
-False
+True
 

@@ -1,0 +1,20 @@
+﻿<Window x:Class="TrainzInfo_client.WIndows.UpdateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrainzInfo_client.WIndows"
+        mc:Ignorable="d"
+        Title="UpdateWindow" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Доступна новая версия!&#xD;&#xA;Скачать?" HorizontalAlignment="Left" Margin="47,52,0,0" VerticalAlignment="Top" Height="45" Width="300"/>
+        <Button Content="Да" HorizontalAlignment="Left" Margin="65,145,0,0" VerticalAlignment="Top" Width="113" Height="27" Click="Button_Click"/>
+        <Button Content="Нет" HorizontalAlignment="Left" Margin="217,145,0,0" VerticalAlignment="Top" Width="108" Height="27" Click="Button_Click_1"/>
+    </Grid>
+</Window>

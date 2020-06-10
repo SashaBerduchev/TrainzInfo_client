@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TrainzInfo_client.HttpPost;
+using TrainzInfo_client.WIndows;
 
 namespace TrainzInfo_client
 {
@@ -29,6 +30,13 @@ namespace TrainzInfo_client
         {
             InitializeComponent();
             StartClient();
+            Trace.WriteLine(this);
+            GetUpdate();
+        }
+
+        private void GetUpdate()
+        {
+            Post.Send("Clients", "GetUpdate", this);
         }
 
         private void StartClient()
@@ -47,6 +55,11 @@ namespace TrainzInfo_client
         {
             Post.Send("NewsInfoes", "IndexAction", this);
 
+        }
+
+        private void btnЫуе_Click(object sender, RoutedEventArgs e)
+        {
+            new NewsWindow().Show();
         }
     }
 }
