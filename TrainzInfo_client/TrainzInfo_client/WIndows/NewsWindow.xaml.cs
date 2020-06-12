@@ -33,6 +33,7 @@ namespace TrainzInfo_client.WIndows
                 NameNews = NameNews.Text, BaseNewsInfo = BaseNews.Text, NewsInfoAll = AllNewsInfo.Text, Imgsrc = PhotoUrl.Text
             };
             Post.Send("NewsInfoes", "CreateAction", this, newsInfoes);
+            this.Close();
         }
     }
 }

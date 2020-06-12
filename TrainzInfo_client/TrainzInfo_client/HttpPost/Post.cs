@@ -27,34 +27,40 @@ namespace TrainzInfo_client.HttpPost
             try
             {
                 string constr = constring + ctr + '/' + act;
+                Trace.WriteLine("POST " + constr);
                 if (data != null)
                 {
                     var senddata = JsonConvert.SerializeObject(data);
                     Trace.WriteLine("POST " + senddata);
                     var content = new StringContent(senddata);
                     Trace.WriteLine(content);
-                    HttpResponseMessage request = await client.PostAsJsonAsync(new Uri(constr), senddata);
-                    request.EnsureSuccessStatusCode();
+                    HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
+                    await client.PutAsJsonAsync(constr, senddata);
+                    await client.PostAsJsonAsync(constr, senddata);
                 }
-                HttpResponseMessage response = await client.GetAsync(constr);
-                response.EnsureSuccessStatusCode();
-                Trace.WriteLine("POST  " + response);
-                string responseBody = await response.Content.ReadAsStringAsync();
+                else
+                {
+                    HttpResponseMessage response = await client.GetAsync(constr);
+                    response.EnsureSuccessStatusCode();
+                    Trace.WriteLine("POST  " + response);
+                    string responseBody = await response.Content.ReadAsStringAsync();
 
-                // Above three lines can be replaced with new helper method below
-                // string responseBody = await client.GetStringAsync(uri);
-                Trace.WriteLine("RESPONSE" + responseBody.ToString());
-                
-                
-                if (ctr == "NewsInfo")
-                {
-                    List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
-                    Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
-                    (window as MainWindow).listnews.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
-                }else if(ctr == "Clients")
-                {
-                    Client client = JsonConvert.DeserializeObject<Client>(responseBody);
-                    new UpdateWindow(client).Show();
+                    // Above three lines can be replaced with new helper method below
+                    // string responseBody = await client.GetStringAsync(uri);
+                    Trace.WriteLine("RESPONSE" + responseBody.ToString());
+
+
+                    if (ctr == "NewsInfoes")
+                    {
+                        List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
+                        Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
+                        (window as MainWindow).listnews.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
+                    }
+                    else if (ctr == "Clients")
+                    {
+                        Client client = JsonConvert.DeserializeObject<Client>(responseBody);
+                        new UpdateWindow(client).Show();
+                    }
                 }
                
             }

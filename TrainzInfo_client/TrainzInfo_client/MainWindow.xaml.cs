@@ -32,6 +32,7 @@ namespace TrainzInfo_client
             StartClient();
             Trace.WriteLine(this);
             GetUpdate();
+            Main();
         }
 
         private void GetUpdate()
