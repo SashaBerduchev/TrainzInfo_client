@@ -45,7 +45,7 @@ namespace TrainzInfo_client
             Post post = new Post();
         }
 
-        async Task Main()
+        public async Task Main()
         {
             // Call asynchronous network methods in a try/catch block to handle exceptions.
 
@@ -58,9 +58,14 @@ namespace TrainzInfo_client
 
         }
 
-        private void btnЫуе_Click(object sender, RoutedEventArgs e)
+        private void btnNewsAdd_Click(object sender, RoutedEventArgs e)
         {
             new NewsWindow().Show();
+        }
+
+        private void btnElectric_locomotives_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("Electic_locomotive", "IndexAction", this);
         }
     }
 }

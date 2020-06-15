@@ -35,8 +35,8 @@ namespace TrainzInfo_client.HttpPost
                     var content = new StringContent(senddata);
                     Trace.WriteLine(content);
                     HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
-                    await client.PutAsJsonAsync(constr, senddata);
                     await client.PostAsJsonAsync(constr, senddata);
+                    (window as MainWindow).Main();
                 }
                 else
                 {
@@ -48,19 +48,7 @@ namespace TrainzInfo_client.HttpPost
                     // Above three lines can be replaced with new helper method below
                     // string responseBody = await client.GetStringAsync(uri);
                     Trace.WriteLine("RESPONSE" + responseBody.ToString());
-
-
-                    if (ctr == "NewsInfoes")
-                    {
-                        List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
-                        Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
-                        (window as MainWindow).listnews.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
-                    }
-                    else if (ctr == "Clients")
-                    {
-                        Client client = JsonConvert.DeserializeObject<Client>(responseBody);
-                        new UpdateWindow(client).Show();
-                    }
+                    ParsData(ctr, window, responseBody);
                 }
                
             }
@@ -71,7 +59,28 @@ namespace TrainzInfo_client.HttpPost
             }
 
         }
-       
-       
+
+        private static void ParsData(string ctr, Window win, string responseBody)
+        {
+            if (ctr == "NewsInfoes")
+            {
+                List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
+                Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
+                (win as MainWindow).listinfo.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
+            }
+            else if (ctr == "Clients")
+            {
+                Client client = JsonConvert.DeserializeObject<Client>(responseBody);
+                if (client.IsUpdate == true)
+                {
+                    new UpdateWindow(client).Show();
+                }
+            }
+            else if (ctr == "Electic_locomotive")
+            {
+               List<Electic_locomotive> Electic_locomotive  = JsonConvert.DeserializeObject<List<Electic_locomotive>>(responseBody);
+                (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x =>x.Name + " " +x.SectionCount + " " + x.Speed).ToList();
+            }
+        }
     }
 }

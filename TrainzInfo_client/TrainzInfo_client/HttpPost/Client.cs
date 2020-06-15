@@ -13,5 +13,6 @@ namespace TrainzInfo_client.HttpPost
         public string Version { get; set; }
 
         public string Link { get; set; }
+        public bool IsUpdate { get; set; }
     }
 }

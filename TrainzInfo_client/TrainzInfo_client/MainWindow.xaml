@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainzInfo_client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="850" Width="1200">
+        Title="MainWindow" Height="850" Width="1200" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,8 +19,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="listnews" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Button x:Name="btnLoad" Content="Загрузка новостей с сайта" HorizontalAlignment="Left" Margin="37,56,0,0" VerticalAlignment="Top" Width="100" Click="btnLoad_Click" Height="46"/>
-        <Button x:Name="btnЫуе" Content="Создать новость" HorizontalAlignment="Left" Margin="168,56,0,0" VerticalAlignment="Top" Width="120" Height="46" Click="btnЫуе_Click"/>
+        <ListBox x:Name="listinfo" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+        <Button x:Name="btnLoad" Content="Загрузка новостей с сайта" HorizontalAlignment="Left" Margin="37,56,0,0" VerticalAlignment="Top" Width="120" Click="btnLoad_Click" Height="46"/>
+        <Button x:Name="btnNewsAdd" Content="Создать новость" HorizontalAlignment="Left" Margin="37,127,0,0" VerticalAlignment="Top" Width="120" Height="46" Click="btnNewsAdd_Click"/>
+        <Button x:Name="btnElectric_locomotives" Content="Список электровозов" HorizontalAlignment="Left" Margin="209,56,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="btnElectric_locomotives_Click"/>
     </Grid>
 </Window>

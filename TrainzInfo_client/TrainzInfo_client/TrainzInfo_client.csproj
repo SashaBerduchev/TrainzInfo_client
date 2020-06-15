@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="HttpPost\Client.cs" />
+    <Compile Include="HttpPost\Electic_locomotive.cs" />
     <Compile Include="HttpPost\NewsInfoes.cs" />
     <Compile Include="WIndows\NewsWindow.xaml.cs">
       <DependentUpon>NewsWindow.xaml</DependentUpon>
