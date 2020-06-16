@@ -72,5 +72,10 @@ namespace TrainzInfo_client
         {
             new ElectrickLocomotiveWindow().Show();
         }
+
+        private void btnDiesel_locomotives_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("DieselLocomoives", "IndexAction", this);
+        }
     }
 }

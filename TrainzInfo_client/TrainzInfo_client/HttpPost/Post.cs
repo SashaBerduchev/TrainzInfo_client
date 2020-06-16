@@ -32,11 +32,8 @@ namespace TrainzInfo_client.HttpPost
                 {
                     var senddata = JsonConvert.SerializeObject(data);
                     Trace.WriteLine("POST " + senddata);
-                    var content = new StringContent(senddata);
-                    Trace.WriteLine(content);
                     HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
-                    await client.PostAsJsonAsync(constr, senddata);
-                    await (window as MainWindow).Main();
+                    Trace.WriteLine(request);
                 }
                 else
                 {
@@ -80,6 +77,11 @@ namespace TrainzInfo_client.HttpPost
             {
                List<Electic_locomotive> Electic_locomotive  = JsonConvert.DeserializeObject<List<Electic_locomotive>>(responseBody);
                 (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x =>x.Name + " " +x.SectionCount + " " + x.Speed + " "+ x.ALlPowerP).ToList();
+            }
+            else if (ctr == "DieselLocomoives")
+            {
+                List<DieselLocomitives> dieselLocomitives = JsonConvert.DeserializeObject<List<DieselLocomitives>>(responseBody);
+                (win as MainWindow).listinfo.ItemsSource = dieselLocomitives.Select(x => x.Name + " " + x.SectionCount + " " + x.MaxSpeed + " " + x.DiseslPower).ToList();
             }
         }
     }
