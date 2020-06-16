@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainzInfo_client", "TrainzInfo_client\TrainzInfo_client.csproj", "{0B92E73F-8805-44F1-9096-4B3559D2BA5D}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "TrainzInfo_client_setup", "TrainzInfo_client_setup\TrainzInfo_client_setup.aiproj", "{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TrainzInfoSetup", "TrainzInfoSetup\TrainzInfoSetup.vdproj", "{B42E4D0D-D578-4781-8AB3-80CA7972C11A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,12 +20,9 @@ Global
 		{0B92E73F-8805-44F1-9096-4B3559D2BA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B92E73F-8805-44F1-9096-4B3559D2BA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B92E73F-8805-44F1-9096-4B3559D2BA5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.All|Any CPU.ActiveCfg = DefaultBuild
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.All|Any CPU.Build.0 = DefaultBuild
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.Debug|Any CPU.Build.0 = DefaultBuild
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{27AA90D8-4FB8-405A-BCCD-CC360D9357F0}.Release|Any CPU.Build.0 = DefaultBuild
+		{B42E4D0D-D578-4781-8AB3-80CA7972C11A}.All|Any CPU.ActiveCfg = Release
+		{B42E4D0D-D578-4781-8AB3-80CA7972C11A}.Debug|Any CPU.ActiveCfg = Debug
+		{B42E4D0D-D578-4781-8AB3-80CA7972C11A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
