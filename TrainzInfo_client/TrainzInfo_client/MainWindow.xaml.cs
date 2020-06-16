@@ -67,5 +67,10 @@ namespace TrainzInfo_client
         {
             Post.Send("Electic_locomotive", "IndexAction", this);
         }
+
+        private void ElectrickLocomotiveAdd_Click(object sender, RoutedEventArgs e)
+        {
+            new ElectrickLocomotiveWindow().Show();
+        }
     }
 }

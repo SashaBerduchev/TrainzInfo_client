@@ -41,3 +41,5 @@ C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_clien
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UpdateWindow.g.cs
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\NewsWindow.baml
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UpdateWindow.baml
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickLocomotiveWindow.g.cs
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickLocomotiveWindow.baml
