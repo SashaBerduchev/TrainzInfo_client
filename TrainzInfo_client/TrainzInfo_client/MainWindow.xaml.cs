@@ -77,5 +77,15 @@ namespace TrainzInfo_client
         {
             Post.Send("DieselLocomoives", "IndexAction", this);
         }
+
+        private void electrickList_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("ElectricTrains", "IndexAction", this);
+        }
+
+        private void AddElectric_Click(object sender, RoutedEventArgs e)
+        {
+            new ElectrickTrainWindow().Show();
+        }
     }
 }

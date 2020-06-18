@@ -43,3 +43,5 @@ C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_clien
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\ElectrickLocomotiveWindow.g.cs
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\ElectrickLocomotiveWindow.baml
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\ElectrickTrainWindow.g.cs
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\ElectrickTrainWindow.baml

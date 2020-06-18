@@ -24,6 +24,8 @@
         <Button x:Name="btnNewsAdd" Content="Создать новость" HorizontalAlignment="Left" Margin="37,127,0,0" VerticalAlignment="Top" Width="120" Height="46" Click="btnNewsAdd_Click"/>
         <Button x:Name="btnElectric_locomotives" Content="Список электровозов" HorizontalAlignment="Left" Margin="209,56,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="btnElectric_locomotives_Click"/>
         <Button x:Name="ElectrickLocomotiveAdd" Content="Добавить электровоз" HorizontalAlignment="Left" Margin="209,127,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="ElectrickLocomotiveAdd_Click" />
-        <Button x:Name="btnDiesel_locomotives_Copy" Content="Список тепловозов" HorizontalAlignment="Left" Margin="66,74,0,0" VerticalAlignment="Top" Width="120" Height="46" RenderTransformOrigin="0.993,0.516" Grid.Column="1" Click="btnDiesel_locomotives_Copy_Click"/>
+        <Button x:Name="btnDiesel_locomotives_Copy" Content="Список тепловозов" HorizontalAlignment="Left" Margin="60,56,0,0" VerticalAlignment="Top" Width="120" Height="46" RenderTransformOrigin="0.993,0.516" Grid.Column="1" Click="btnDiesel_locomotives_Copy_Click"/>
+        <Button x:Name="electrickList" Content="Список электричек" Grid.Column="1" HorizontalAlignment="Left" Margin="204,56,0,0" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" Height="46" Click="electrickList_Click"/>
+        <Button Name="AddElectric" Grid.ColumnSpan="2" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="204,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddElectric_Click"/>
     </Grid>
 </Window>

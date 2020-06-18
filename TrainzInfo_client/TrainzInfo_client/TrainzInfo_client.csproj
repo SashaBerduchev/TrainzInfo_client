@@ -81,9 +81,13 @@
     <Compile Include="HttpPost\Client.cs" />
     <Compile Include="HttpPost\DieselLocomitives.cs" />
     <Compile Include="HttpPost\Electic_locomotive.cs" />
+    <Compile Include="HttpPost\ElectricTrain.cs" />
     <Compile Include="HttpPost\NewsInfoes.cs" />
     <Compile Include="WIndows\ElectrickLocomotiveWindow.xaml.cs">
       <DependentUpon>ElectrickLocomotiveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WIndows\ElectrickTrainWindow.xaml.cs">
+      <DependentUpon>ElectrickTrainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WIndows\NewsWindow.xaml.cs">
       <DependentUpon>NewsWindow.xaml</DependentUpon>
@@ -106,6 +110,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WIndows\ElectrickLocomotiveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WIndows\ElectrickTrainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
