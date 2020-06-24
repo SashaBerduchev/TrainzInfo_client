@@ -47,3 +47,16 @@ C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_clien
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickTrainWindow.baml
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UkrzaliznutsaFilies.g.cs
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UkrzaliznutsaFilies.baml
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Release\System.Net.Http.Extensions.dll
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Release\System.Net.Http.Formatting.dll
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Release\System.Net.Http.Primitives.dll
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickLocomotiveWindow.g.cs
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickTrainWindow.g.cs
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\NewsWindow.g.cs
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UkrzaliznutsaFilies.g.cs
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UpdateWindow.g.cs
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickLocomotiveWindow.baml
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\ElectrickTrainWindow.baml
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\NewsWindow.baml
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UkrzaliznutsaFilies.baml
+D:\Projects\C#\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\UpdateWindow.baml
