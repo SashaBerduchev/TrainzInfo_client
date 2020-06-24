@@ -88,6 +88,11 @@ namespace TrainzInfo_client.HttpPost
                 List<ElectricTrain> ElectricTrain = JsonConvert.DeserializeObject<List<ElectricTrain>>(responseBody);
                 (win as MainWindow).listinfo.ItemsSource = ElectricTrain.Select(x => x.Name + " " + "" + x.VagonsCountP + " " + x.MaxSpeed).ToList();
             }
+            else if (ctr == "UkrainsRailways")
+            {
+                List<UkrainsRailways> Electic_locomotive = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
+                (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Name + " " + x.Information).ToList();
+            }
         }
     }
 }

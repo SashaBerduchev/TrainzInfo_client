@@ -27,5 +27,7 @@
         <Button x:Name="btnDiesel_locomotives_Copy" Content="Список тепловозов" HorizontalAlignment="Left" Margin="60,56,0,0" VerticalAlignment="Top" Width="120" Height="46" RenderTransformOrigin="0.993,0.516" Grid.Column="1" Click="btnDiesel_locomotives_Copy_Click"/>
         <Button x:Name="electrickList" Content="Список электричек" Grid.Column="1" HorizontalAlignment="Left" Margin="204,56,0,0" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" Height="46" Click="electrickList_Click"/>
         <Button Name="AddElectric" Grid.ColumnSpan="2" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="204,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddElectric_Click"/>
+        <Button x:Name="UkrainRailways" Content="Список филий УЗ" Grid.Column="2" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="UkrainRailways_Click" />
+        <Button x:Name="AddUZFiliy" Content="Добавить филию" Grid.Column="2" HorizontalAlignment="Left" Margin="88,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddUZFiliy_Click" />
     </Grid>
 </Window>

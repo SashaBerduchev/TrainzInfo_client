@@ -87,5 +87,15 @@ namespace TrainzInfo_client
         {
             new ElectrickTrainWindow().Show();
         }
+
+        private void UkrainRailways_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("UkrainsRailways", "IndexAction", this);
+        }
+
+        private void AddUZFiliy_Click(object sender, RoutedEventArgs e)
+        {
+            new UkrzaliznutsaFilies().Show();
+        }
     }
 }
