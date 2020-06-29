@@ -78,11 +78,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HttpPost\City.cs" />
     <Compile Include="HttpPost\Client.cs" />
     <Compile Include="HttpPost\DieselLocomitives.cs" />
     <Compile Include="HttpPost\Electic_locomotive.cs" />
     <Compile Include="HttpPost\ElectricTrain.cs" />
     <Compile Include="HttpPost\NewsInfoes.cs" />
+    <Compile Include="HttpPost\Oblast.cs" />
+    <Compile Include="HttpPost\Stations.cs" />
     <Compile Include="HttpPost\UkrainsRailways.cs" />
     <Compile Include="WIndows\ElectrickLocomotiveWindow.xaml.cs">
       <DependentUpon>ElectrickLocomotiveWindow.xaml</DependentUpon>
@@ -92,6 +95,9 @@
     </Compile>
     <Compile Include="WIndows\NewsWindow.xaml.cs">
       <DependentUpon>NewsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WIndows\StationAddWindow.xaml.cs">
+      <DependentUpon>StationAddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WIndows\UkrzaliznutsaFilies.xaml.cs">
       <DependentUpon>UkrzaliznutsaFilies.xaml</DependentUpon>
@@ -122,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WIndows\NewsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WIndows\StationAddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -97,5 +97,15 @@ namespace TrainzInfo_client
         {
             new UkrzaliznutsaFilies().Show();
         }
+
+        private void StationsList_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("Stations", "IndexAction", this);
+        }
+
+        private void AddStation_Click(object sender, RoutedEventArgs e)
+        {
+            new StationAddWindow().Show();
+        }
     }
 }

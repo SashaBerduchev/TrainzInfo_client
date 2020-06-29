@@ -41,9 +41,6 @@ namespace TrainzInfo_client.HttpPost
                     response.EnsureSuccessStatusCode();
                     Trace.WriteLine("POST  " + response);
                     string responseBody = await response.Content.ReadAsStringAsync();
-
-                    // Above three lines can be replaced with new helper method below
-                    // string responseBody = await client.GetStringAsync(uri);
                     Trace.WriteLine("RESPONSE" + responseBody.ToString());
                     ParsData(ctr, window, responseBody);
                 }
@@ -59,39 +56,60 @@ namespace TrainzInfo_client.HttpPost
 
         private static void ParsData(string ctr, Window win, string responseBody)
         {
-            if (ctr == "NewsInfoes")
-            {
-                List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
-                Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
-                (win as MainWindow).listinfo.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
-            }
-            else if (ctr == "Clients")
-            {
-                Client client = JsonConvert.DeserializeObject<Client>(responseBody);
-                if (client.IsUpdate == true)
+            if(win is MainWindow) {
+                if (ctr == "NewsInfoes")
                 {
-                    new UpdateWindow(client).Show();
+                    List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
+                    Trace.WriteLine(news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll));
+                    (win as MainWindow).listinfo.ItemsSource = news.Select(x => x.id + " " + x.NameNews + " " + x.BaseNewsInfo + " " + x.NewsInfoAll).ToList();
                 }
-            }
-            else if (ctr == "Electic_locomotive")
-            {
-               List<Electic_locomotive> Electic_locomotive  = JsonConvert.DeserializeObject<List<Electic_locomotive>>(responseBody);
-                (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x =>x.Name + " " +x.SectionCount + " " + x.Speed + " "+ x.ALlPowerP).ToList();
-            }
-            else if (ctr == "DieselLocomoives")
-            {
-                List<DieselLocomitives> dieselLocomitives = JsonConvert.DeserializeObject<List<DieselLocomitives>>(responseBody);
-                (win as MainWindow).listinfo.ItemsSource = dieselLocomitives.Select(x => x.Name + " " + x.SectionCount + " " + x.MaxSpeed + " " + x.DiseslPower).ToList();
-            }
-            else if (ctr == "ElectricTrain")
-            {
-                List<ElectricTrain> ElectricTrain = JsonConvert.DeserializeObject<List<ElectricTrain>>(responseBody);
-                (win as MainWindow).listinfo.ItemsSource = ElectricTrain.Select(x => x.Name + " " + "" + x.VagonsCountP + " " + x.MaxSpeed).ToList();
-            }
-            else if (ctr == "UkrainsRailways")
-            {
-                List<UkrainsRailways> Electic_locomotive = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
-                (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Name + " " + x.Information).ToList();
+                else if (ctr == "Clients")
+                {
+                    Client client = JsonConvert.DeserializeObject<Client>(responseBody);
+                    if (client.IsUpdate == true)
+                    {
+                        new UpdateWindow(client).Show();
+                    }
+                }
+                else if (ctr == "Electic_locomotive")
+                {
+                    List<Electic_locomotive> Electic_locomotive = JsonConvert.DeserializeObject<List<Electic_locomotive>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Name + " " + x.SectionCount + " " + x.Speed + " " + x.ALlPowerP).ToList();
+                }
+                else if (ctr == "DieselLocomoives")
+                {
+                    List<DieselLocomitives> dieselLocomitives = JsonConvert.DeserializeObject<List<DieselLocomitives>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = dieselLocomitives.Select(x => x.Name + " " + x.SectionCount + " " + x.MaxSpeed + " " + x.DiseslPower).ToList();
+                }
+                else if (ctr == "ElectricTrain")
+                {
+                    List<ElectricTrain> ElectricTrain = JsonConvert.DeserializeObject<List<ElectricTrain>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = ElectricTrain.Select(x => x.Name + " " + "" + x.VagonsCountP + " " + x.MaxSpeed).ToList();
+                }
+                else if (ctr == "UkrainsRailways")
+                {
+                    List<UkrainsRailways> Electic_locomotive = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Name + " " + x.Information).ToList();
+                }
+                else if (ctr == "Stations")
+                {
+                    List<Stations> stations = JsonConvert.DeserializeObject<List<Stations>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = stations.Select(x => x.Name + " " + x.Oblast + " " + x.Railway + " " + x.City).ToList();
+                }
+            }else if(win is StationAddWindow){
+                if(ctr == "Oblasts")
+                {
+                    List<Oblast> oblasts = JsonConvert.DeserializeObject<List<Oblast>>(responseBody);
+                    (win as StationAddWindow).Oblast.ItemsSource = oblasts.Select(x => x.Name).ToList();
+                }else if(ctr == "Cities")
+                {
+                    List<City> cities = JsonConvert.DeserializeObject<List<City>>(responseBody);
+                    (win as StationAddWindow).City.ItemsSource = cities.Select(x => x.Name).ToList();
+                }else if(ctr == "UkrainsRailways")
+                {
+                    List<UkrainsRailways> uz = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
+                    (win as StationAddWindow).Railway.ItemsSource = uz.Select(x => x.Name).ToList();
+                }
             }
         }
     }

@@ -29,5 +29,7 @@
         <Button Name="AddElectric" Grid.ColumnSpan="2" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="204,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddElectric_Click"/>
         <Button x:Name="UkrainRailways" Content="Список филий УЗ" Grid.Column="2" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="UkrainRailways_Click" />
         <Button x:Name="AddUZFiliy" Content="Добавить филию" Grid.Column="2" HorizontalAlignment="Left" Margin="88,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddUZFiliy_Click" />
+        <Button x:Name="StationsList" Content="Список станций" Grid.Column="3" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="StationsList_Click" />
+        <Button x:Name="AddStation" Content="Добавить станцию" Grid.Column="3" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="AddStation_Click" />
     </Grid>
 </Window>
