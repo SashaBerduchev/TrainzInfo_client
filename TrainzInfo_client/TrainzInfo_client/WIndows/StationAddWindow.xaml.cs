@@ -25,7 +25,10 @@ namespace TrainzInfo_client.WIndows
         {
             InitializeComponent();
             Trace.WriteLine(this);
-            Loading();
+            for(int i=0; i<100; i++)
+            {
+                Loading();
+            }
         }
 
         private void Loading()

@@ -47,3 +47,5 @@ C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_clien
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\ElectrickTrainWindow.baml
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\UkrzaliznutsaFilies.g.cs
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\UkrzaliznutsaFilies.baml
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\StationAddWindow.g.cs
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Debug\WIndows\StationAddWindow.baml

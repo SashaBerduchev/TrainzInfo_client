@@ -33,6 +33,7 @@ namespace TrainzInfo_client
             Trace.WriteLine(this);
             GetUpdate();
             Main();
+             
         }
 
         private void GetUpdate()
@@ -54,7 +55,7 @@ namespace TrainzInfo_client
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("NewsInfoes", "IndexAction", this);
+            Main();
 
         }
 
