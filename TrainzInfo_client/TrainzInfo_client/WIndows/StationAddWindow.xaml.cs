@@ -25,13 +25,10 @@ namespace TrainzInfo_client.WIndows
         {
             InitializeComponent();
             Trace.WriteLine(this);
-            for(int i=0; i<100; i++)
-            {
-                Loading();
-            }
+            Loading();
         }
 
-        private void Loading()
+        private async Task Loading()
         {
             Post.Send("Oblasts", "IndexAction", this);
             Post.Send("Cities", "IndexAction", this);
