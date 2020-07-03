@@ -28,7 +28,11 @@ namespace TrainzInfo_client.WIndows
             Loading();
         }
 
-        private async Task Loading()
+        public void Update()
+        {
+            Loading();
+        }
+        protected async Task Loading()
         {
             Post.Send("Oblasts", "IndexAction", this);
             Post.Send("Cities", "IndexAction", this);
@@ -40,13 +44,28 @@ namespace TrainzInfo_client.WIndows
             Stations stations = new Stations
             {
                 Name = Nametxt.Text,
-                City = City.SelectedItem.ToString(),
-                Oblast = Oblast.SelectedItem.ToString(),
-                Railway = Railway.SelectedItem.ToString(),
+                City = Citytxt.SelectedItem.ToString(),
+                Oblast = Oblasttxt.SelectedItem.ToString(),
+                Railway = Railwaytxt.SelectedItem.ToString(),
                 Imgsrc = img.Text
             };
             Post.Send("Stations", "CreateAction", this, stations);
             this.Close();
+        }
+
+        private void AddCity_Click(object sender, RoutedEventArgs e)
+        {
+            new CityAddWindow(this).Show();
+        }
+
+        private void AddOblast_Click(object sender, RoutedEventArgs e)
+        {
+            new OblastAddWindow(this).Show();
+        }
+
+        private void Citytxt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Nametxt.Text = Citytxt.SelectedItem.ToString();
         }
     }
 }

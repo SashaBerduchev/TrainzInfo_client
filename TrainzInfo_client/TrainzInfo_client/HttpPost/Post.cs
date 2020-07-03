@@ -34,6 +34,14 @@ namespace TrainzInfo_client.HttpPost
                     Trace.WriteLine("POST " + senddata);
                     HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
                     Trace.WriteLine(request);
+                    if(window is CityAddWindow)
+                    {
+                        (window as CityAddWindow).CityUpdate();
+                    }
+                    if (window is OblastAddWindow)
+                    {
+                        (window as OblastAddWindow).Update();
+                    }
                 }
                 else
                 {
@@ -100,16 +108,21 @@ namespace TrainzInfo_client.HttpPost
                 if(ctr == "Oblasts")
                 {
                     List<Oblast> oblasts = JsonConvert.DeserializeObject<List<Oblast>>(responseBody);
-                    (win as StationAddWindow).Oblast.ItemsSource = oblasts.Select(x => x.Name).ToList();
+                    (win as StationAddWindow).Oblasttxt.ItemsSource = oblasts.Select(x => x.Name).ToList();
                 }else if(ctr == "Cities")
                 {
                     List<City> cities = JsonConvert.DeserializeObject<List<City>>(responseBody);
-                    (win as StationAddWindow).City.ItemsSource = cities.Select(x => x.Name).ToList();
+                    (win as StationAddWindow).Citytxt.ItemsSource = cities.Select(x => x.Name).ToList();
                 }else if(ctr == "UkrainsRailways")
                 {
                     List<UkrainsRailways> uz = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
-                    (win as StationAddWindow).Railway.ItemsSource = uz.Select(x => x.Name).ToList();
+                    (win as StationAddWindow).Railwaytxt.ItemsSource = uz.Select(x => x.Name).ToList();
                 }
+            }
+            else if(win is OblastAddWindow)
+            {
+                List<Oblast> oblasts = JsonConvert.DeserializeObject<List<Oblast>>(responseBody);
+                (win as OblastAddWindow).OblCenterName.ItemsSource = oblasts.Select(x => x.Name).ToList();
             }
         }
     }

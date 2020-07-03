@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainzInfo_client.HttpPost
 {
-    class Oblast
+    public class Oblast
     {
         public string Name { get; set; }
         

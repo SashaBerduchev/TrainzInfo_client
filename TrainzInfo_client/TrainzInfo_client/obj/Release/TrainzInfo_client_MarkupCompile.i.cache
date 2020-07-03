@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\
 TrainzInfo_client
 none
 false
 TRACE
-D:\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\App.xaml
-7863482676
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\App.xaml
+9-1119554182
 
-23258991729
-124-194416224
-MainWindow.xaml;WIndows\ElectrickLocomotiveWindow.xaml;WIndows\ElectrickTrainWindow.xaml;WIndows\NewsWindow.xaml;WIndows\StationAddWindow.xaml;WIndows\UkrzaliznutsaFilies.xaml;WIndows\UpdateWindow.xaml;
+25-658957020
+1241796117582
+MainWindow.xaml;WIndows\CityAddWindow.xaml;WIndows\ElectrickLocomotiveWindow.xaml;WIndows\ElectrickTrainWindow.xaml;WIndows\NewsWindow.xaml;WIndows\OblastAddWindow.xaml;WIndows\StationAddWindow.xaml;WIndows\UkrzaliznutsaFilies.xaml;WIndows\UpdateWindow.xaml;
 
-False
+True
 

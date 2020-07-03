@@ -94,3 +94,7 @@ D:\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\Sta
 D:\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\StationAddWindow.baml
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\StationAddWindow.g.cs
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\StationAddWindow.baml
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\CityAddWindow.g.cs
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\CityAddWindow.baml
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\OblastAddWindow.g.cs
+C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\WIndows\OblastAddWindow.baml
