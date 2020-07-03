@@ -40,12 +40,27 @@ namespace TrainzInfo_client.WIndows
         }
         private void CitySave_Click(object sender, RoutedEventArgs e)
         {
+            Save();
+            this.Close();
+        }
+
+        private void Save()
+        {
+
             City city = new City
             {
                 Name = City.Text
             };
             Post.Send("Cities", "CreateAction", this, city);
-            this.Close();
+        }
+
+        private void City_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Save();
+                this.Close();
+            }
         }
     }
 }
