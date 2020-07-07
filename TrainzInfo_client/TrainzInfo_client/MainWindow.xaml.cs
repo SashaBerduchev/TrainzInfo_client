@@ -108,5 +108,15 @@ namespace TrainzInfo_client
         {
             new StationAddWindow().Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Post.Send("StationsShadules", "IndexAction", this);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new StationsShaduleWindow().Show();
+        }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\sasha\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\App.xaml
-9-1119554182
+102042359234
 
-25-423737555
+28-1598438926
 1241796117582
-MainWindow.xaml;WIndows\CityAddWindow.xaml;WIndows\ElectrickLocomotiveWindow.xaml;WIndows\ElectrickTrainWindow.xaml;WIndows\NewsWindow.xaml;WIndows\OblastAddWindow.xaml;WIndows\StationAddWindow.xaml;WIndows\UkrzaliznutsaFilies.xaml;WIndows\UpdateWindow.xaml;
+MainWindow.xaml;WIndows\CityAddWindow.xaml;WIndows\ElectrickLocomotiveWindow.xaml;WIndows\ElectrickTrainWindow.xaml;WIndows\NewsWindow.xaml;WIndows\OblastAddWindow.xaml;WIndows\StationAddWindow.xaml;WIndows\StationsShaduleWindow.xaml;WIndows\UkrzaliznutsaFilies.xaml;WIndows\UpdateWindow.xaml;
 
 True
 

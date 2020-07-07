@@ -86,6 +86,8 @@
     <Compile Include="HttpPost\NewsInfoes.cs" />
     <Compile Include="HttpPost\Oblast.cs" />
     <Compile Include="HttpPost\Stations.cs" />
+    <Compile Include="HttpPost\StationsShadule.cs" />
+    <Compile Include="HttpPost\Train.cs" />
     <Compile Include="HttpPost\UkrainsRailways.cs" />
     <Compile Include="WIndows\CityAddWindow.xaml.cs">
       <DependentUpon>CityAddWindow.xaml</DependentUpon>
@@ -104,6 +106,9 @@
     </Compile>
     <Compile Include="WIndows\StationAddWindow.xaml.cs">
       <DependentUpon>StationAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WIndows\StationsShaduleWindow.xaml.cs">
+      <DependentUpon>StationsShaduleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WIndows\UkrzaliznutsaFilies.xaml.cs">
       <DependentUpon>UkrzaliznutsaFilies.xaml</DependentUpon>
@@ -146,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WIndows\StationAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WIndows\StationsShaduleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

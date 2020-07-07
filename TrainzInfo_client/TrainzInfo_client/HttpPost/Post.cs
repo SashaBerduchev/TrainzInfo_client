@@ -34,7 +34,7 @@ namespace TrainzInfo_client.HttpPost
                     Trace.WriteLine("POST " + senddata);
                     HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
                     Trace.WriteLine(request);
-                    if(window is CityAddWindow)
+                    if (window is CityAddWindow)
                     {
                         (window as CityAddWindow).CityUpdate();
                     }
@@ -52,7 +52,7 @@ namespace TrainzInfo_client.HttpPost
                     Trace.WriteLine("RESPONSE" + responseBody.ToString());
                     ParsData(ctr, window, responseBody);
                 }
-               
+
             }
             catch (Exception e)
             {
@@ -64,7 +64,8 @@ namespace TrainzInfo_client.HttpPost
 
         private static void ParsData(string ctr, Window win, string responseBody)
         {
-            if(win is MainWindow) {
+            if (win is MainWindow)
+            {
                 if (ctr == "NewsInfoes")
                 {
                     List<NewsInfoes> news = JsonConvert.DeserializeObject<List<NewsInfoes>>(responseBody);
@@ -104,25 +105,52 @@ namespace TrainzInfo_client.HttpPost
                     List<Stations> stations = JsonConvert.DeserializeObject<List<Stations>>(responseBody);
                     (win as MainWindow).listinfo.ItemsSource = stations.Select(x => x.Name + " " + x.Oblast + " " + x.Railway + " " + x.City).ToList();
                 }
-            }else if(win is StationAddWindow){
-                if(ctr == "Oblasts")
+                else if (ctr == "StationsShadules")
+                {
+                    List<StationsShadule> stations = JsonConvert.DeserializeObject<List<StationsShadule>>(responseBody);
+                    (win as MainWindow).listinfo.ItemsSource = stations.Select(x => x.Station + " " + x.TimeOfArrive + " " + x.TimeOfDepet + " " + x.UzFilia + " " + x.TrainInfo).ToList();
+                }
+            }
+            else if (win is StationAddWindow)
+            {
+                if (ctr == "Oblasts")
                 {
                     List<Oblast> oblasts = JsonConvert.DeserializeObject<List<Oblast>>(responseBody);
                     (win as StationAddWindow).Oblasttxt.ItemsSource = oblasts.Select(x => x.Name).ToList();
-                }else if(ctr == "Cities")
+                }
+                else if (ctr == "Cities")
                 {
                     List<City> cities = JsonConvert.DeserializeObject<List<City>>(responseBody);
                     (win as StationAddWindow).Citytxt.ItemsSource = cities.Select(x => x.Name).ToList();
-                }else if(ctr == "UkrainsRailways")
+                }
+                else if (ctr == "UkrainsRailways")
                 {
                     List<UkrainsRailways> uz = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
                     (win as StationAddWindow).Railwaytxt.ItemsSource = uz.Select(x => x.Name).ToList();
                 }
             }
-            else if(win is OblastAddWindow)
+            else if (win is OblastAddWindow)
             {
                 List<Oblast> oblasts = JsonConvert.DeserializeObject<List<Oblast>>(responseBody);
                 (win as OblastAddWindow).OblCenterName.ItemsSource = oblasts.Select(x => x.Name).ToList();
+            }
+            else if (win is StationsShaduleWindow)
+            {
+                if (ctr == "UkrainsRailways")
+                {
+                    List<UkrainsRailways> uz = JsonConvert.DeserializeObject<List<UkrainsRailways>>(responseBody);
+                    (win as StationsShaduleWindow).UzFiliaCombo.ItemsSource = uz.Select(x => x.Name).ToList();
+                }
+                else if (ctr == "Stations")
+                {
+                    List<Stations> stations = JsonConvert.DeserializeObject<List<Stations>>(responseBody);
+                    (win as StationsShaduleWindow).StationCombo.ItemsSource = stations.Select(x => x.Name).ToList();
+                }
+                else if (ctr == "Trains")
+                {
+                    List<Train> stations = JsonConvert.DeserializeObject<List<Train>>(responseBody);
+                    (win as StationsShaduleWindow).TrainCombo.ItemsSource = stations.Select(x => x.NameOfTrain + " " + x.StationFrom + " "+ x.StationTo).ToList();
+                }
             }
         }
     }
