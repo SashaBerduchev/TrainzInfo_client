@@ -29,6 +29,8 @@ namespace TrainzInfo_client
         public MainWindow()
         {
             InitializeComponent();
+            ModeType.Items.Add("DEBUG");
+            ModeType.Items.Add("RELEASE");
             StartClient();
             Trace.WriteLine(this);
             GetUpdate();
@@ -117,6 +119,21 @@ namespace TrainzInfo_client
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new StationsShaduleWindow().Show();
+        }
+
+        private void ModeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string type = ModeType.SelectedItem.ToString();
+            if (type == "RELEASE")
+            {
+                Config.DEBUG_MODE = false;
+            }
+            else
+            {
+                Config.DEBUG_MODE = true;
+            }
+            StartClient();
+            Main();
         }
     }
 }
