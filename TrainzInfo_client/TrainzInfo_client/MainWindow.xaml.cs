@@ -34,8 +34,13 @@ namespace TrainzInfo_client
             StartClient();
             Trace.WriteLine(this);
             GetUpdate();
-            Main();
+            Main();;
              
+        }
+
+        private void GetCities()
+        {
+            Post.GetCities();
         }
 
         private void GetUpdate()
@@ -134,6 +139,11 @@ namespace TrainzInfo_client
             }
             StartClient();
             Main();
+        }
+
+        private void LoodCiti_Click(object sender, RoutedEventArgs e)
+        {
+            GetCities();
         }
     }
 }

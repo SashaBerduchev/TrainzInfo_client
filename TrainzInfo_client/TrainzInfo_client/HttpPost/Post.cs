@@ -9,6 +9,7 @@ using System.ServiceModel.PeerResolvers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml;
 using TrainzInfo_client.WIndows;
 
 namespace TrainzInfo_client.HttpPost
@@ -22,7 +23,66 @@ namespace TrainzInfo_client.HttpPost
         {
             constring = Config.GetString();
         }
-        public static async void Send(string ctr, string act, Window window, object data = null)
+        public static async void GetCities()
+        {
+            
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load("D://DB/Города.xml");
+                XmlElement xRoot = xmlDocument.DocumentElement;
+                // обход всех узлов в корневом элементе
+                foreach (XmlNode xnode in xRoot)
+                {
+                    if (xnode.Attributes.Count > 0)
+                    {
+                        string city ="";
+                        string obl = "";
+                        XmlNode attr1 = xnode.Attributes.GetNamedItem("name");
+                        if (attr1 != null)
+                        {
+                            Trace.WriteLine(attr1);
+                            city = attr1.Value;
+                        }
+                        XmlNode attr2 = xnode.Attributes.GetNamedItem("oblcenter");
+                        if (attr2 != null)
+                        {
+                            Trace.WriteLine(attr2);
+                            obl = attr2.Value;
+                        }
+                        Oblast oblast = new Oblast
+                        {
+                            Name = city,
+                            OblCenter = obl
+                        };
+                        Send("Cities", "DownloadActionOblast", null, oblast);
+                    }
+                    // обходим все дочерние узлы элемента user
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        string cityname = "";
+                        // если узел - company
+                        if (childnode.Name == "city")
+                        {
+                            XmlNode attr = childnode.Attributes.GetNamedItem("name");
+                            cityname = attr.Value;
+                            City city = new City
+                            {
+                                Name = cityname
+                            };
+                            Send("Cities", "DownloadActionCity", null, city);
+
+                        }
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Trace.WriteLine(e.ToString());
+                MessageBox.Show(e.ToString());
+            }
+        }
+        public static async void Send(string ctr, string act, Window window = null, object data = null)
         {
             try
             {
@@ -34,6 +94,7 @@ namespace TrainzInfo_client.HttpPost
                     Trace.WriteLine("POST " + senddata);
                     HttpResponseMessage request = await client.PostAsJsonAsync(constr, senddata);
                     Trace.WriteLine(request);
+                    if (window == null) return;
                     if (window is CityAddWindow)
                     {
                         (window as CityAddWindow).CityUpdate();
