@@ -145,5 +145,15 @@ namespace TrainzInfo_client
         {
             GetCities();
         }
+
+        private void LoadDepot_Click(object sender, RoutedEventArgs e)
+        {
+            SetDepot();
+        }
+
+        private void SetDepot()
+        {
+            Post.SetDepot();
+        }
     }
 }

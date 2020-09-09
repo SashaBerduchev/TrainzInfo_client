@@ -80,6 +80,7 @@
     </ApplicationDefinition>
     <Compile Include="HttpPost\City.cs" />
     <Compile Include="HttpPost\Client.cs" />
+    <Compile Include="HttpPost\DepotList.cs" />
     <Compile Include="HttpPost\DieselLocomitives.cs" />
     <Compile Include="HttpPost\Electic_locomotive.cs" />
     <Compile Include="HttpPost\ElectricTrain.cs" />

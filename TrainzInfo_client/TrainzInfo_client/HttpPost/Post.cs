@@ -82,6 +82,56 @@ namespace TrainzInfo_client.HttpPost
                 MessageBox.Show(e.ToString());
             }
         }
+
+        public static async void SetDepot()
+        {
+
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load("D://DB/Города.xml");
+                XmlElement xRoot = xmlDocument.DocumentElement;
+                // обход всех узлов в корневом элементе
+                foreach (XmlNode xnode in xRoot)
+                {
+                    if (xnode.Attributes.Count > 0)
+                    {
+                        Trace.WriteLine(xnode);
+                    }
+
+                    // обходим все дочерние узлы элемента user
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        string namedepo = "";
+                        string filia = "";
+                        string addres = "";
+                        // если узел - company
+                        if (childnode.Name == "depo")
+                        {
+                            XmlNode attr = childnode.Attributes.GetNamedItem("name");
+                            namedepo = attr.Value;
+                            XmlNode attr2 = childnode.Attributes.GetNamedItem("city");
+                            addres = attr2.Value;
+                            XmlNode attr3 = childnode.Attributes.GetNamedItem("filia");
+                            filia = attr3.Value;
+                            DepotList depot = new DepotList
+                            {
+                                Name = namedepo, 
+                                Addres = addres,
+                                UkrainsRailways = filia
+                            };
+                            Send("DepotLists", "DownloadActionDepot", null, depot);
+
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.ToString());
+                MessageBox.Show(e.ToString());
+            }
+        }
         public static async void Send(string ctr, string act, Window window = null, object data = null)
         {
             try
