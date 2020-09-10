@@ -84,6 +84,7 @@
     <Compile Include="HttpPost\DieselLocomitives.cs" />
     <Compile Include="HttpPost\Electic_locomotive.cs" />
     <Compile Include="HttpPost\ElectricTrain.cs" />
+    <Compile Include="HttpPost\Locomotive_series.cs" />
     <Compile Include="HttpPost\NewsInfoes.cs" />
     <Compile Include="HttpPost\Oblast.cs" />
     <Compile Include="HttpPost\Stations.cs" />

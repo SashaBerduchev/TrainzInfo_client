@@ -23,6 +23,51 @@ namespace TrainzInfo_client.HttpPost
         {
             constring = Config.GetString();
         }
+
+        public static async void GetSeriese()
+        {
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load("D://DB/Города.xml");
+                XmlElement xRoot = xmlDocument.DocumentElement;
+                // обход всех узлов в корневом элементе
+                foreach (XmlNode xnode in xRoot)
+                {
+                    if (xnode.Attributes.Count > 0)
+                    {
+                        Trace.WriteLine(xnode);
+                    }
+
+                    // обходим все дочерние узлы элемента user
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        string nameseria = "";
+                        // если узел - company
+                        if (childnode.Name == "serie")
+                        {
+                            XmlNode attr = childnode.Attributes.GetNamedItem("name");
+                            nameseria = attr.Value;
+
+                            Locomotive_series locomotive_Series = new Locomotive_series
+                            {
+                                Seria = nameseria
+                            };
+
+                            Send("Locomotive_series", "DownloadAction", null, locomotive_Series);
+
+                        }
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.ToString());
+                MessageBox.Show(e.ToString());
+            }
+        }
+
         public static async void GetCities()
         {
             

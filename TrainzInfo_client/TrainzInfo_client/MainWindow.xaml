@@ -38,5 +38,6 @@
         <ComboBox Name="ModeType" Grid.Column="5" Grid.Row="3" SelectionChanged="ModeType_SelectionChanged" Margin="48,160,10,-10"/>
         <Button x:Name="LoodCiti" Grid.Column="4" Margin="129,78,133,103" Click="LoodCiti_Click" Grid.ColumnSpan="2" Content="Заливка городов"/>
         <Button x:Name="LoadDepot" Grid.Column="4" Margin="129,149,133,32" Grid.ColumnSpan="2" Content="Заливка депо" Click="LoadDepot_Click"/>
+        <Button x:Name="LoadLocSeriese" Grid.Column="4" Margin="129,110,133,71" Content="Заливка депо" Grid.ColumnSpan="2" Click="LoadLocSeriese_Click"/>
     </Grid>
 </Window>

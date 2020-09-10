@@ -155,5 +155,10 @@ namespace TrainzInfo_client
         {
             Post.SetDepot();
         }
+
+        private void LoadLocSeriese_Click(object sender, RoutedEventArgs e)
+        {
+            Post.GetSeriese();
+        }
     }
 }
