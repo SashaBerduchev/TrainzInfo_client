@@ -22,8 +22,68 @@ namespace TrainzInfo_client.HttpPost
         public Post()
         {
             constring = Config.GetString();
+            
         }
 
+        public async static void GetTrains()
+        {
+            List<Electic_locomotive> electic_locomotives = new List<Electic_locomotive>();
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.Load("D://DB/Trains.xml");
+                XmlElement xRoot = xmlDocument.DocumentElement;
+                foreach (XmlNode xnode in xRoot)
+                {
+                    if (xnode.Attributes.Count > 0)
+                    {
+                        Trace.WriteLine(xnode);
+                    }
+
+                    // обходим все дочерние узлы элемента user
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        string nameseria = "";
+                        string number = "";
+                        int section;
+                        int speed;
+                        int power;
+                        string img = "";
+                        // если узел - company
+                        if (childnode.Name == "train")
+                        {
+                            XmlNode attrname = childnode.Attributes.GetNamedItem("seria");
+                            nameseria = attrname.Value;
+                            XmlNode attrnum = childnode.Attributes.GetNamedItem("number");
+                            number = attrnum.Value;
+                            XmlNode attrsectuion = childnode.Attributes.GetNamedItem("sections");
+                            section = Convert.ToInt32(attrsectuion.Value);
+                            XmlNode attrspeed = childnode.Attributes.GetNamedItem("speed");
+                            speed = Convert.ToInt32(attrspeed.Value);
+                            XmlNode attrpower = childnode.Attributes.GetNamedItem("Power");
+                            power = Convert.ToInt32(attrpower.Value);
+                            Electic_locomotive electic_Locomotive = new Electic_locomotive
+                            {
+                                Seria = nameseria,
+                                Number = number,
+                                SectionCount = section,
+                                Speed = speed,
+                                ALlPowerP = power,
+                                LocomotiveImg = ""
+                            };
+
+                            electic_locomotives.Add(electic_Locomotive);
+                        }
+
+                    }
+                }
+                Send("Electic_locomotive", "CreateAction", null, electic_locomotives);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
         public static async void GetSeriese()
         {
             try
@@ -239,7 +299,7 @@ namespace TrainzInfo_client.HttpPost
                 else if (ctr == "Electic_locomotive")
                 {
                     List<Electic_locomotive> Electic_locomotive = JsonConvert.DeserializeObject<List<Electic_locomotive>>(responseBody);
-                    (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Name + " " + x.SectionCount + " " + x.Speed + " " + x.ALlPowerP).ToList();
+                    (win as MainWindow).listinfo.ItemsSource = Electic_locomotive.Select(x => x.Seria + " " + x.SectionCount + " " + x.Speed + " " + x.ALlPowerP).ToList();
                 }
                 else if (ctr == "DieselLocomoives")
                 {

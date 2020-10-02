@@ -160,5 +160,10 @@ namespace TrainzInfo_client
         {
             Post.GetSeriese();
         }
+
+        private void GetTrrains_Click(object sender, RoutedEventArgs e)
+        {
+            Post.GetTrains();
+        }
     }
 }

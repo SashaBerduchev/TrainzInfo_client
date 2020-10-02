@@ -29,7 +29,7 @@ namespace TrainzInfo_client.WIndows
         {
             Electic_locomotive electic_Locomotive = new Electic_locomotive
             {
-                Name = Name.Text,
+                Seria = Name.Text,
                 LocomotiveImg = LocomotiveImg.Text,
                 SectionCount = Convert.ToInt32(SectionCountText.Text),
                 ALlPowerP = Convert.ToInt32(ALlPowerText.Text)

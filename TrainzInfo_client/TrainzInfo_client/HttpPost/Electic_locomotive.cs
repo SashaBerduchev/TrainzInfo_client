@@ -10,8 +10,8 @@ namespace TrainzInfo_client.HttpPost
     {
         public int id { get; set; }
         
-        public string Name { get; set; }
-        
+        public string Seria { get; set; }
+        public string Number { get; set; }
         public int Speed { get; set; }
         
         public int SectionCount { get; set; }
