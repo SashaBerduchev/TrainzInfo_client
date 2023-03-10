@@ -4,25 +4,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-
-using System.ServiceModel.PeerResolvers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
+using TrainzInfo_client.HttpPost;
 using TrainzInfo_client.WIndows;
 
-namespace TrainzInfo_client.HttpPost
+namespace TrainzInfo_client.Connection
 {
-
-    class Post
+    internal class Post
     {
         private static string constring;
         static readonly HttpClient client = new HttpClient();
         public Post()
         {
             constring = Config.GetString();
-            
+
         }
 
         public async static void GetTrains()
@@ -79,7 +77,7 @@ namespace TrainzInfo_client.HttpPost
                 }
                 Send("Electic_locomotive", "CreateAction", null, electic_locomotives);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
@@ -130,7 +128,7 @@ namespace TrainzInfo_client.HttpPost
 
         public static async void GetCities()
         {
-            
+
             try
             {
                 XmlDocument xmlDocument = new XmlDocument();
@@ -141,7 +139,7 @@ namespace TrainzInfo_client.HttpPost
                 {
                     if (xnode.Attributes.Count > 0)
                     {
-                        string city ="";
+                        string city = "";
                         string obl = "";
                         XmlNode attr1 = xnode.Attributes.GetNamedItem("name");
                         if (attr1 != null)
@@ -181,7 +179,7 @@ namespace TrainzInfo_client.HttpPost
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString());
@@ -221,7 +219,7 @@ namespace TrainzInfo_client.HttpPost
                             filia = attr3.Value;
                             DepotList depot = new DepotList
                             {
-                                Name = namedepo, 
+                                Name = namedepo,
                                 Addres = addres,
                                 UkrainsRailways = filia
                             };
@@ -365,9 +363,10 @@ namespace TrainzInfo_client.HttpPost
                 else if (ctr == "Trains")
                 {
                     List<Train> stations = JsonConvert.DeserializeObject<List<Train>>(responseBody);
-                    (win as StationsShaduleWindow).TrainCombo.ItemsSource = stations.Select(x => x.NameOfTrain + " " + x.StationFrom + " "+ x.StationTo).ToList();
+                    (win as StationsShaduleWindow).TrainCombo.ItemsSource = stations.Select(x => x.NameOfTrain + " " + x.StationFrom + " " + x.StationTo).ToList();
                 }
             }
         }
     }
 }
+

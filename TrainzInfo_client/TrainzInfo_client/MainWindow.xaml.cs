@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrainzInfo_client.Connection;
 using TrainzInfo_client.HttpPost;
 using TrainzInfo_client.WIndows;
 
