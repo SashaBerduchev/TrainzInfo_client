@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -29,9 +30,10 @@ namespace TrainzInfo_client.WIndows
             Loading();
         }
 
-        private void Loading()
+        private async void Loading()
         {
-            Post.Send("UkrainsRailways", "IndexAction", this);
+            List<UkrainsRailways> filias = JsonConvert.DeserializeObject<List<UkrainsRailways>>(await Post.Send("UkrainsRailways", "IndexAction", this));
+            UzFiliaCombo.ItemsSource = filias.Select(x => x.Name);
             Post.Send("Stations", "IndexAction", this);
             Post.Send("Trains", "IndexAction", this);
         }
@@ -47,7 +49,7 @@ namespace TrainzInfo_client.WIndows
                 ImgTrain = ImgSrc.Text,
                 UzFilia = UzFiliaCombo.SelectedItem.ToString()
             };
-            Post.Send("StationsShadules", "CreateAction", this, stationsShadule);
+            Post.Send("StationsShadules", "CreateAction", this, JsonConvert.SerializeObject(stationsShadule));
             this.Close();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace TrainzInfo_client.WIndows
             {
                 Name = OblastName.Text, OblCenter = OblCenterName.SelectedItem.ToString()
             };
-            Post.Send("Oblasts", "CreateAction", this, oblast);
+            Post.Send("Oblasts", "CreateAction", this, JsonConvert.SerializeObject(oblast));
             this.Close();
         }
 

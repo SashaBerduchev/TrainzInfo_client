@@ -179,3 +179,5 @@ C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_c
 C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\TrainzInfo_client.csproj.CopyComplete
 C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\TrainzInfo_client.exe
 C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\obj\Release\TrainzInfo_client.pdb
+C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Release\Nancy.dll
+C:\Users\Alexander\Source\Repos\TrainzInfo_client\TrainzInfo_client\TrainzInfo_client\bin\Release\Nancy.xml

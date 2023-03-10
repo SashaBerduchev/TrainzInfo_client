@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,7 @@ namespace TrainzInfo_client.WIndows
                 SectionCount = Convert.ToInt32(SectionCountText.Text),
                 ALlPowerP = Convert.ToInt32(ALlPowerText.Text)
             };
-            Post.Send("Electic_locomotive", "CreateAction", this, electic_Locomotive);
+            Post.Send("Electic_locomotive", "CreateAction", this, JsonConvert.SerializeObject(electic_Locomotive));
             this.Close();
 
         }

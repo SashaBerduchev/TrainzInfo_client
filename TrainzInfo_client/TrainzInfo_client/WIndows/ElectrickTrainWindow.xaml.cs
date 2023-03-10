@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace TrainzInfo_client.WIndows
                     VagonsCountP = vagonbox.Text,
                     Imgsrc = imgstr.Text
                 };
-                Post.Send("ElectricTrains", "CreateAction", this, electricTrain);
+                Post.Send("ElectricTrains", "CreateAction", this, JsonConvert.SerializeObject(electricTrain));
             }catch(Exception exp)
             {
                 Trace.WriteLine(exp.ToString());

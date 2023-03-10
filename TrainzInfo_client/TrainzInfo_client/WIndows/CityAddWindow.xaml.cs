@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace TrainzInfo_client.WIndows
             {
                 Name = City.Text
             };
-            Post.Send("Cities", "CreateAction", this, city);
+            Post.Send("Cities", "CreateAction", this, JsonConvert.SerializeObject(city));
         }
 
         private void City_KeyDown(object sender, KeyEventArgs e)

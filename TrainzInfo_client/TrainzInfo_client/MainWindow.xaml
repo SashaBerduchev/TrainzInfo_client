@@ -21,24 +21,72 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="listinfo" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-        <Button x:Name="btnLoad" Content="Загрузка новостей с сайта" HorizontalAlignment="Left" Margin="37,56,0,0" VerticalAlignment="Top" Width="120" Click="btnLoad_Click" Height="46"/>
-        <Button x:Name="btnNewsAdd" Content="Создать новость" HorizontalAlignment="Left" Margin="37,127,0,0" VerticalAlignment="Top" Width="120" Height="46" Click="btnNewsAdd_Click"/>
-        <Button x:Name="btnElectric_locomotives" Content="Список электровозов" HorizontalAlignment="Left" Margin="209,56,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="btnElectric_locomotives_Click"/>
-        <Button x:Name="ElectrickLocomotiveAdd" Content="Добавить электровоз" HorizontalAlignment="Left" Margin="209,127,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="ElectrickLocomotiveAdd_Click" />
-        <Button x:Name="btnDiesel_locomotives_Copy" Content="Список тепловозов" HorizontalAlignment="Left" Margin="60,56,0,0" VerticalAlignment="Top" Width="120" Height="46" RenderTransformOrigin="0.993,0.516" Grid.Column="1" Click="btnDiesel_locomotives_Copy_Click"/>
-        <Button x:Name="electrickList" Content="Список электричек" Grid.Column="1" HorizontalAlignment="Left" Margin="204,56,0,0" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" Height="46" Click="electrickList_Click"/>
-        <Button Name="AddElectric" Grid.ColumnSpan="2" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="204,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddElectric_Click"/>
-        <Button x:Name="UkrainRailways" Content="Список филий УЗ" Grid.Column="2" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="UkrainRailways_Click" />
-        <Button x:Name="AddUZFiliy" Content="Добавить филию" Grid.Column="2" HorizontalAlignment="Left" Margin="88,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddUZFiliy_Click" />
-        <Button x:Name="StationsList" Content="Список станций" Grid.Column="3" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="StationsList_Click" />
-        <Button x:Name="AddStation" Content="Добавить станцию" Grid.Column="3" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="AddStation_Click" />
-        <Button Content="Рассписание по станции" Grid.Column="3" HorizontalAlignment="Left" Margin="142,62,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="Button_Click" Grid.ColumnSpan="2"/>
-        <Button Content="Добавить рассписание&#xD;&#xA;" Grid.Column="3" HorizontalAlignment="Left" Margin="142,135,0,0" VerticalAlignment="Top" Width="134" Height="46" Click="Button_Click_1" Grid.ColumnSpan="2"/>
-        <ComboBox Name="ModeType" Grid.Column="5" Grid.Row="3" SelectionChanged="ModeType_SelectionChanged" Margin="48,160,10,-10"/>
-        <Button x:Name="LoodCiti" Grid.Column="4" Margin="129,39,133,142" Click="LoodCiti_Click" Grid.ColumnSpan="2" Content="Заливка городов"/>
-        <Button x:Name="LoadDepot" Grid.Column="4" Margin="129,110,133,71" Grid.ColumnSpan="2" Content="Заливка депо" Click="LoadDepot_Click"/>
-        <Button x:Name="LoadLocSeriese" Grid.Column="4" Margin="129,62,133,119" Content="Заливка депо" Grid.ColumnSpan="2" Click="LoadLocSeriese_Click"/>
-        <Button x:Name="GetTrrains" Grid.Column="4" Margin="129,156,133,25" Grid.ColumnSpan="2" Content="Загрузка локосотивов" Click="GetTrrains_Click"/>
+
+        <TabControl Grid.ColumnSpan="6" Margin="0,10,-40,-69" Grid.RowSpan="4">
+            <TabItem Name="News" Header="Новини">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="690*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="gridnews" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,127,0,0" />
+                    <Button x:Name="btnLoad" Content="Загрузка новостей с сайта" HorizontalAlignment="Left" Margin="37,56,0,0" VerticalAlignment="Top" Width="120" Click="btnLoad_Click" Height="46"/>
+                    <Button x:Name="btnNewsAdd" Content="Создать новость" HorizontalAlignment="Left" Margin="69,50,0,0" VerticalAlignment="Top" Width="120" Height="46" Click="btnNewsAdd_Click" Grid.Column="1"/>
+
+
+
+                    <!--<Button x:Name="AddUZFiliy" Content="Добавить филию" Grid.Column="2" HorizontalAlignment="Left" Margin="88,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddUZFiliy_Click" />
+                    
+                    <Button Content="Рассписание по станции" Grid.Column="3" HorizontalAlignment="Left" Margin="142,62,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="Button_Click" Grid.ColumnSpan="2"/>
+                    <Button Content="Добавить рассписание&#xD;&#xA;" Grid.Column="3" HorizontalAlignment="Left" Margin="142,135,0,0" VerticalAlignment="Top" Width="134" Height="46" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+                    <ComboBox Name="ModeType" Grid.Column="5" Grid.Row="3" SelectionChanged="ModeType_SelectionChanged" Margin="48,160,10,-10"/>
+                    <Button x:Name="LoodCiti" Grid.Column="4" Margin="129,39,133,142" Click="LoodCiti_Click" Grid.ColumnSpan="2" Content="Заливка городов"/>
+                    <Button x:Name="LoadDepot" Grid.Column="4" Margin="129,110,133,71" Grid.ColumnSpan="2" Content="Заливка депо" Click="LoadDepot_Click"/>
+                    <Button x:Name="LoadLocSeriese" Grid.Column="4" Margin="129,62,133,119" Content="Заливка депо" Grid.ColumnSpan="2" Click="LoadLocSeriese_Click"/>
+                    <Button x:Name="GetTrrains" Grid.Column="4" Margin="129,156,133,25" Grid.ColumnSpan="2" Content="Загрузка локосотивов" Click="GetTrrains_Click"/>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="690*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnElectric_locomotives" Content="Список электровозов" HorizontalAlignment="Left" Margin="209,56,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="btnElectric_locomotives_Click"/>
+                    <Button x:Name="ElectrickLocomotiveAdd" Content="Добавить электровоз" HorizontalAlignment="Left" Margin="209,127,0,0" VerticalAlignment="Top" Width="120" Height="46"  Grid.ColumnSpan="2" Click="ElectrickLocomotiveAdd_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="690*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnDiesel_locomotives_Copy" Content="Список тепловозов" HorizontalAlignment="Left" Margin="60,56,0,0" VerticalAlignment="Top" Width="120" Height="46" RenderTransformOrigin="0.993,0.516" Grid.Column="1" Click="btnDiesel_locomotives_Copy_Click"/>
+                    <Button x:Name="electrickList" Content="Список электричек" Grid.Column="1" HorizontalAlignment="Left" Margin="204,56,0,0" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" Height="46" Click="electrickList_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Станції">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="690*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="StationsList" Content="Список станций" Grid.Column="3" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="StationsList_Click" />
+                    <Button x:Name="AddStation" Content="Добавить станцию" Grid.Column="3" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="AddStation_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="690*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="AddElectric" Grid.ColumnSpan="2" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="204,127,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.404,5.183" Height="46" Click="AddElectric_Click"/>
+                    <Button x:Name="UkrainRailways" Content="Список филий УЗ" Grid.Column="2" HorizontalAlignment="Left" Margin="88,56,0,0" VerticalAlignment="Top" Width="124" Height="46" Click="UkrainRailways_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

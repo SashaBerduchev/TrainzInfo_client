@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace TrainzInfo_client.WIndows
         }
         protected async Task Loading()
         {
-            Post.Send("Oblasts", "IndexAction", this);
+            Oblasttxt.ItemsSource = JsonConvert.DeserializeObject<List<Oblast>>(await Post.Send("Oblasts", "IndexAction", this)).Select(x=>x.Name);
             Post.Send("Cities", "IndexAction", this);
             Post.Send("UkrainsRailways", "IndexAction", this);
         }
@@ -50,7 +51,7 @@ namespace TrainzInfo_client.WIndows
                 Railway = Railwaytxt.SelectedItem.ToString(),
                 Imgsrc = img.Text
             };
-            Post.Send("Stations", "CreateAction", this, stations);
+            Post.Send("Stations", "CreateAction", this, JsonConvert.SerializeObject(stations));
             this.Close();
         }
 

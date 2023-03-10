@@ -35,7 +35,7 @@ namespace TrainzInfo_client.WIndows
                 Information = Info.Text,
                 Photo = Img.Text
             };
-            Post.Send("UkrainsRailways", "CreateAction", this, ukrainsRailways);
+            Post.Send("UkrainsRailways", "CreateAction", this, JsonConvert.SerializeObject(ukrainsRailways));
             this.Close();
         }
     }

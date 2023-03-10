@@ -18,7 +18,7 @@ namespace TrainzInfo_client
             }
             else
             {
-              connstring = "http://trainzinfo.somee.com/";
+              connstring = "https://www.trainzinfo.com.ua/";
             }
             return connstring;
         }

@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -30,8 +31,8 @@ namespace TrainzInfo_client
         public MainWindow()
         {
             InitializeComponent();
-            ModeType.Items.Add("DEBUG");
-            ModeType.Items.Add("RELEASE");
+            //ModeType.Items.Add("DEBUG");
+            //ModeType.Items.Add("RELEASE");
             StartClient();
             Trace.WriteLine(this);
             GetUpdate();
@@ -39,14 +40,15 @@ namespace TrainzInfo_client
              
         }
 
-        private void GetCities()
+        private async void GetCities()
         {
-            Post.GetCities();
+            string data = await Post.Send("Cities", "GetCitiesAction");
+            
         }
 
         private void GetUpdate()
         {
-            Post.Send("Clients", "GetUpdate", this);
+            //Post.Send("Clients", "GetUpdate", this);
         }
 
         private void StartClient()
@@ -58,7 +60,20 @@ namespace TrainzInfo_client
         {
             // Call asynchronous network methods in a try/catch block to handle exceptions.
 
-            Post.Send("NewsInfoes", "IndexAction", this);
+            string data =  await Post.Send("NewsInfoes", "GetNewsAction", this);
+            List<NewsInfoes> newses = JsonConvert.DeserializeObject<List<NewsInfoes>>(data);
+            for (int i = 0; i < newses.Count; i++)
+            {
+                if (newses[i].BaseNewsInfo.Length > 20)
+                {
+                    newses[i].BaseNewsInfo = newses[i].BaseNewsInfo.Substring(0, 20) + "...";
+                }
+                if (newses[i].NewsInfoAll.Length > 30)
+                {
+                    newses[i].NewsInfoAll = newses[i].NewsInfoAll.Substring(0, 30) + "...";
+                }
+            }
+            gridnews.ItemsSource = newses;
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -74,7 +89,7 @@ namespace TrainzInfo_client
 
         private void btnElectric_locomotives_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("Electic_locomotive", "IndexAction", this);
+            //Post.Send("Electic_locomotive", "IndexAction", this);
         }
 
         private void ElectrickLocomotiveAdd_Click(object sender, RoutedEventArgs e)
@@ -84,12 +99,12 @@ namespace TrainzInfo_client
 
         private void btnDiesel_locomotives_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("DieselLocomoives", "IndexAction", this);
+            //Post.Send("DieselLocomoives", "IndexAction", this);
         }
 
         private void electrickList_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("ElectricTrains", "IndexAction", this);
+            //Post.Send("ElectricTrains", "IndexAction", this);
         }
 
         private void AddElectric_Click(object sender, RoutedEventArgs e)
@@ -99,7 +114,7 @@ namespace TrainzInfo_client
 
         private void UkrainRailways_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("UkrainsRailways", "IndexAction", this);
+            //Post.Send("UkrainsRailways", "IndexAction", this);
         }
 
         private void AddUZFiliy_Click(object sender, RoutedEventArgs e)
@@ -119,7 +134,7 @@ namespace TrainzInfo_client
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Post.Send("StationsShadules", "IndexAction", this);
+            Post.Send("StationsShadules", "GetNewsAction", this);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -127,20 +142,20 @@ namespace TrainzInfo_client
             new StationsShaduleWindow().Show();
         }
 
-        private void ModeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string type = ModeType.SelectedItem.ToString();
-            if (type == "RELEASE")
-            {
-                Config.DEBUG_MODE = false;
-            }
-            else
-            {
-                Config.DEBUG_MODE = true;
-            }
-            StartClient();
-            Main();
-        }
+        //private void ModeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string type = ModeType.SelectedItem.ToString();
+        //    if (type == "RELEASE")
+        //    {
+        //        Config.DEBUG_MODE = false;
+        //    }
+        //    else
+        //    {
+        //        Config.DEBUG_MODE = true;
+        //    }
+        //    StartClient();
+        //    Main();
+        //}
 
         private void LoodCiti_Click(object sender, RoutedEventArgs e)
         {
@@ -154,17 +169,17 @@ namespace TrainzInfo_client
 
         private void SetDepot()
         {
-            Post.SetDepot();
+            //Post.SetDepot();
         }
 
         private void LoadLocSeriese_Click(object sender, RoutedEventArgs e)
         {
-            Post.GetSeriese();
+            //Post.GetSeriese();
         }
 
         private void GetTrrains_Click(object sender, RoutedEventArgs e)
         {
-            Post.GetTrains();
+            
         }
     }
 }
